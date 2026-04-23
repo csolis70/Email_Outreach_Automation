@@ -3,7 +3,7 @@
 ## Overview
 This project documents a Python-based workflow used to clean, merge, validate, and prepare outreach contact data for a real email campaign. The work was originally developed in Jupyter while consolidating participant records from multiple spreadsheets collected across several years.
 
-This repository presents the main technical components of the process in a cleaner and more readable form.
+This repository presents the main technical components of the process, with a focus on validation and email delivery, in a cleaner and more readable form.
 
 ## Project Scope
 The project involved:
