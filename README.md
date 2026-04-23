@@ -25,8 +25,6 @@ The project involved:
 ## Repository Structure
 - `src/validate_emails.py` – regex and MX-record-based email validation utilities
 - `src/send_emails.py` – batch email sending utilities using SendGrid
-- `data/sample_input/` – sanitized example input data
-- `data/sample_output/` – sanitized example output data
 
 ## Workflow Summary
 1. Load participant spreadsheets from multiple years
