@@ -24,7 +24,6 @@ The project involved:
 - Used SendGrid to send personalized HTML emails while accounting for authentication issues and sending limits
 
 ## Repository Structure
-- `src/clean_data.py` – functions for loading, cleaning, standardizing, and merging source spreadsheets
 - `src/validate_emails.py` – regex and MX-record-based email validation utilities
 - `src/send_emails.py` – batch email sending utilities using SendGrid
 - `data/sample_input/` – sanitized example input data
