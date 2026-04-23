@@ -1,56 +1,58 @@
 # Email Outreach Automation
 
 ## Overview
-This project automates email outreach by combining data cleaning, contact list consolidation, email validation, and batch delivery. The workflow was built in Python to process participant records collected across multiple years, generate a clean master contact list, and prepare personalized outreach emails for delivery through SendGrid.
+This project documents a Python-based workflow used to clean, merge, validate, and prepare outreach contact data for a real email campaign. The work was originally developed in Jupyter while consolidating participant records from multiple spreadsheets collected across several years.
 
-## What the Project Does
-- Loads and combines multiple contact datasets from Excel files
-- Cleans inconsistent column formats and removes incomplete entries
-- Merges records into a unified contact list
-- Removes duplicate emails
-- Validates email addresses using regex and DNS MX record checks
-- Exports a finalized outreach dataset
-- Sends personalized batch emails using the SendGrid API
+Rather than a single end-to-end application, this repository presents the main technical components of the process in a cleaner and more readable form.
+
+## Project Scope
+The project involved:
+
+- consolidating contact data from multiple Excel files
+- cleaning inconsistent schemas across years
+- combining names and email addresses into a unified contact list
+- removing duplicate and malformed entries
+- validating email addresses using regex and DNS MX record checks
+- preparing a final outreach list for batch delivery
+- sending personalized HTML emails in batches through SendGrid
 
 ## Technical Highlights
-- Built a data processing pipeline in `pandas` for merging and cleaning contact data
-- Standardized inconsistent schema across files (for example, `Email` vs `Email Address`)
-- Implemented email validation using both syntax checks and domain-level MX record verification
-- Added batch sending logic to work within SendGrid sending limits
-- Used HTML email templating to improve formatting consistency
+- Used `pandas` to merge and clean multiple yearly datasets
+- Standardized inconsistent column names such as `Email` vs `Email Address`
+- Built validation checks for both email syntax and domain MX records
+- Created a final cleaned contact list for outreach use
+- Used SendGrid to send personalized HTML emails while accounting for authentication issues and sending limits
 
-## Workflow
-1. Load participant data from multiple yearly spreadsheets
-2. Drop irrelevant columns and missing entries
-3. Standardize email/name fields across datasets
-4. Concatenate records into a single contact list
-5. Remove duplicate addresses
-6. Validate addresses using regex and MX record checks
-7. Export the cleaned final list
-8. Send personalized outreach emails in batches through SendGrid
+## Repository Structure
+- `src/clean_data.py` – functions for loading, cleaning, standardizing, and merging source spreadsheets
+- `src/validate_emails.py` – regex and MX-record-based email validation utilities
+- `src/send_emails.py` – batch email sending utilities using SendGrid
+- `data/sample_input/` – sanitized example input data
+- `data/sample_output/` – sanitized example output data
+
+## Workflow Summary
+1. Load participant spreadsheets from multiple years
+2. Remove irrelevant columns and missing entries
+3. Standardize contact fields across datasets
+4. Merge records into one contact list
+5. Remove duplicate email addresses
+6. Validate addresses using syntax and MX checks
+7. Export a final cleaned list
+8. Send outreach emails in batches
+
+## Notes
+This repository contains a cleaned and simplified version of the work. Sensitive data such as real contact lists, private names, and API credentials are not included.
 
 ## Tools
 - Python
 - pandas
-- Jupyter Notebook
+- Jupyter
 - SendGrid API
-- regex
 - dnspython
-
-## Results
-The final workflow produced a cleaned and validated outreach list from multiple source files and supported batch email delivery for a real outreach campaign.
-
-## Notes
-Sensitive data such as real email addresses, private contact lists, and API credentials have been removed from this public repository.
-
-## Repository Structure
-- `notebooks/` – development notebook for cleaning, validation, and sending workflow
-- `data/sample_input/` – sanitized example input data
-- `data/sample_output/` – sanitized example output data
-- `report/` – short project notes and documentation
+- regex
 
 ## Future Improvements
-- Refactor notebook logic into reusable Python modules
-- Add logging and retry handling for failed sends
-- Add configurable templates and command-line execution
+- Refactor scripts into a single reusable command-line workflow
+- Add logging for failed sends and retries
 - Add automated tests for validation utilities
+- Add configurable email templates
