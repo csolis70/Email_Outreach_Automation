@@ -50,9 +50,3 @@ This repository contains a cleaned and simplified version of the work. Sensitive
 - SendGrid API
 - dnspython
 - regex
-
-## Future Improvements
-- Refactor scripts into a single reusable command-line workflow
-- Add logging for failed sends and retries
-- Add automated tests for validation utilities
-- Add configurable email templates
