@@ -9,10 +9,10 @@ def send_emails(df, sender, subject_tmpl, body_tmpl, api_key=None, dry_run=True)
 
     df: pandas DataFrame with at least 'Email' column
     sender: str, e.i, email that you want to send batch emails from
-    subject_tmpl : str, may contain {placeholders}
-    body_tmpl : str, may contain {placeholders}
-    api_key : SendGrid API key (required if dry_run=False)
-    dry_run : if True, print previews only
+    subject_tmpl: str, may contain {placeholders}
+    body_tmpl: str, may contain {placeholders}
+    api_key: SendGrid API key (required if dry_run=False)
+    dry_run: if True, print previews only
     """
 
     if not dry_run and not api_key:
